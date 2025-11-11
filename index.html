@@ -8,73 +8,139 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-  body { background: #f5f7fa; color: #333; line-height: 1.6; }
+  body { background-color: #f0f2f5; color: #333; line-height: 1.6; scroll-behavior: smooth; }
 
   /* Header */
   header {
-    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
-    padding: 80px 20px 60px;
     text-align: center;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    padding: 100px 20px 60px;
   }
-  header h1 { font-size: 3rem; font-weight: 700; margin-bottom: 15px; }
-  header p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+  header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  header p {
+    font-size: 1.3rem;
+    opacity: 0.85;
+    margin-bottom: 30px;
+  }
   .cta-btn {
-    display: inline-block;
     background: #fff;
-    color: #4a90e2;
+    color: #6a11cb;
     font-weight: 600;
-    padding: 12px 30px;
+    padding: 14px 40px;
     border-radius: 50px;
     text-decoration: none;
     transition: 0.3s;
   }
-  .cta-btn:hover { background: #f0f0f0; }
+  .cta-btn:hover { background: #f2f2f2; }
 
-  /* Section titles */
-  section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+  /* Navbar */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+  nav a:hover { background: rgba(255,255,255,0.2); }
+
+  /* Sections */
+  section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
   section h2 {
+    font-size: 2.8rem;
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 60px;
     position: relative;
-    display: inline-block;
     color: #222;
   }
   section h2::after {
     content: "";
-    width: 60px;
+    width: 70px;
     height: 4px;
-    background: #4a90e2;
+    background: #6a11cb;
     display: block;
-    margin: 10px auto 0;
+    margin: 15px auto 0;
     border-radius: 2px;
   }
 
-  /* Grid Cards */
-  .grid { display: grid; gap: 30px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  /* Card Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
   .card {
     background: #fff;
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 40px 25px;
     text-align: center;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     transition: transform 0.4s, box-shadow 0.4s;
   }
-  .card:hover { transform: translateY(-10px); box-shadow: 0 25px 40px rgba(0,0,0,0.12); }
-  .card i { font-size: 3rem; color: #9013fe; margin-bottom: 20px; }
-  .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #4a90e2; }
-  .card p { color: #555; font-size: 1rem; }
+  .card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
+  .card i {
+    font-size: 3rem;
+    color: #2575fc;
+    margin-bottom: 20px;
+  }
+  .card h3 {
+    font-size: 1.6rem;
+    color: #6a11cb;
+    margin-bottom: 15px;
+  }
+  .card p { font-size: 1rem; color: #555; }
+
+  /* CTA Section */
+  .cta-section {
+    background: #2575fc;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 30px;
+    margin: 80px 20px;
+  }
+  .cta-section h2 { color: #fff; font-size: 2.5rem; margin-bottom: 25px; }
+  .cta-section a {
+    background: #fff;
+    color: #2575fc;
+    font-weight: 600;
+    padding: 15px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .cta-section a:hover { background: #e6e6e6; }
 
   /* Footer */
-  footer { background: #222; color: #fff; text-align: center; padding: 40px 20px; margin-top: 60px; }
+  footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+  }
   footer p { opacity: 0.7; font-size: 0.9rem; }
 
-  /* Responsive */
-  @media (max-width: 768px) {
+  @media(max-width: 768px) {
     header h1 { font-size: 2.2rem; }
     section h2 { font-size: 2rem; }
+    .cta-section h2 { font-size: 2rem; }
   }
 </style>
 </head>
@@ -83,7 +149,13 @@
 <header>
   <h1>Tạp Hóa Robin</h1>
   <p>Sim, thẻ game, eBook, khóa học & dịch vụ MMO cho cộng đồng Việt tại Nhật</p>
-  <a href="#sim" class="cta-btn">Xem Dịch Vụ</a>
+  <nav>
+    <a href="#sim">Sim & Proxy</a>
+    <a href="#cards">Thẻ Game</a>
+    <a href="#ebook">eBook & Khóa học</a>
+    <a href="#affiliate">Affiliate</a>
+  </nav>
+  <a href="#sim" class="cta-btn">Khám phá dịch vụ</a>
 </header>
 
 <section id="sim">
@@ -126,33 +198,3 @@
       <h3>eBook học tiếng Nhật</h3>
       <p>Sách PDF, hướng dẫn học tập, luyện N5~N2, tài liệu hữu ích cho người mới sang Nhật.</p>
     </div>
-    <div class="card">
-      <i class="fas fa-chalkboard-teacher"></i>
-      <h3>Khóa học online</h3>
-      <p>Hướng dẫn MMO, nấu ăn Nhật, review sản phẩm, làm blog và affiliate marketing.</p>
-    </div>
-  </div>
-</section>
-
-<section id="affiliate">
-  <h2>Affiliate & Dropship</h2>
-  <div class="grid">
-    <div class="card">
-      <i class="fas fa-link"></i>
-      <h3>Affiliate Nhật Bản</h3>
-      <p>Amazon JP, Rakuten, A8.net… chia sẻ link kiếm hoa hồng, bán sản phẩm Nhật trực tuyến.</p>
-    </div>
-    <div class="card">
-      <i class="fas fa-shipping-fast"></i>
-      <h3>Dropshipping & mua hộ</h3>
-      <p>Mua hộ sản phẩm Nhật về Việt Nam, bán online cho cộng đồng Việt tại Nhật và nước ngoài.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2025 Tạp Hóa Robin. Bản quyền thuộc về taphoarobin.com</p>
-</footer>
-
-</body>
-</html>
